@@ -1,19 +1,26 @@
+{/*--- DATOS ---*/ }
+
 import type { Todo } from "../types/todo";
 
 export const dummyData: Todo[] = [
     {
         id:1,
-        title:"like this video",
-        completed:false,
+        title:"Tailwind",
+        completed:true,
     },
     {
         id:2,
-        title:"Suscribe to coding flow",
+        title:"React",
         completed:false,
     },
     {
         id:3,
-        title:"Leave a nice coment 😊",
+        title:"Next.js",
+        completed:false,
+    },
+    {
+        id:4,
+        title:"Librerias",
         completed:false,
     }
 ];
