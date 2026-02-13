@@ -11,7 +11,7 @@ export const dummyData: Todo[] = [
     {
         id:2,
         title:"React",
-        completed:false,
+        completed:true,
     },
     {
         id:3,
