@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { dummyData } from './data/todos';
 import TodoItem from './components/TodoItem';
+import AddItem from './components/AddItem';
 
 
 function App() {
@@ -17,11 +18,26 @@ function App() {
   );
   }
 
+  function addTodo (title: string) {
+    setTodos(prevState => [
+      ...prevState,
+      {
+        id:prevState.length + 1,
+        title,
+        completed:false
+      }
+      
+    ])
+  }
+
   return (
     <main className="py-10 px-20 h-screen">
       <div className='border mx-auto rounded-md flex flex-col gap-2 overflow-hidden'>
         <h1 className="font-bold text-3xl text-center bg-blue-500 text-white">Your To-do</h1> 
           <div className='space-y-2 m-5 mr-4 ml-4'>
+            <AddItem
+            onSubmited={addTodo}
+            />
             {todos.map((elementosTodo) =>(
               <TodoItem 
               key={elementosTodo.id} 

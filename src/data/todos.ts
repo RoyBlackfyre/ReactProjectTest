@@ -6,12 +6,12 @@ export const dummyData: Todo[] = [
     {
         id:1,
         title:"Tailwind",
-        completed:true,
+        completed:false,
     },
     {
         id:2,
         title:"React",
-        completed:true,
+        completed:false,
     },
     {
         id:3,
