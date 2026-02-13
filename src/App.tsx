@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import { dummyData } from './data/todos';
 import TodoItem from './components/TodoItem';
 import AddItem from './components/AddItem';
+import AddList from './components/AddList';
 
 
 function App() {
@@ -30,6 +29,10 @@ function App() {
     ])
   }
 
+  function deleteTodoItem(id:number) {
+    setTodos(prevState => prevState.filter(todos=> todos.id !==id))
+  }
+
   return (
     <main className="py-10 px-20 h-screen">
       <div className='border mx-auto rounded-md flex flex-col gap-2 overflow-hidden'>
@@ -38,13 +41,7 @@ function App() {
             <AddItem
             onSubmited={addTodo}
             />
-            {todos.map((elementosTodo) =>(
-              <TodoItem 
-              key={elementosTodo.id} 
-              tareaObjeto={elementosTodo}
-              onCompletedChange={setTodoCompleted}
-              />
-            ))}
+            <AddList todos={todos} onCompletedChange={setTodoCompleted} onDelete={deleteTodoItem}/>
           
         </div>
       </div>
